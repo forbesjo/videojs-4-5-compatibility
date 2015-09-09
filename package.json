@@ -1,0 +1,30 @@
+{
+  "name": "videojs-4-5-compatibility",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {
+    "jshint": "^2.8.0",
+    "karma": "^0.13.9",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-firefox-launcher": "^0.1.6",
+    "karma-phantomjs-launcher": "^0.2.1",
+    "karma-qunit": "^0.1.5",
+    "phantomjs": "^1.9.18",
+    "qunitjs": "^1.19.0",
+    "video.js": "^5.0.0-rc.90"
+  },
+  "scripts": {
+    "test": "jshint index.js && karma start test/karma.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/forbesjo/videojs-4-5-compatibility.git"
+  },
+  "author": "Joe Forbes <joseph.a.forbes@gmail.com> (https://github.com/forbesjo)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/forbesjo/videojs-4-5-compatibility/issues"
+  },
+  "homepage": "https://github.com/forbesjo/videojs-4-5-compatibility#readme"
+}
