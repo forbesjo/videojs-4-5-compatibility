@@ -17,9 +17,13 @@
       videojs[key] = videojs.browser[key];
     });
 
-  Object.keys(videojs.getComponent('Component').components_)
+  var Component = videojs.getComponent('Component');
+  Object.keys(Component.components_)
     .forEach(function(component) {
       videojs[component] = videojs.getComponent(component);
+      if (!videojs[component].extend) {
+        videojs[component].extend = Component.extend;
+      }
     });
 
   videojs.round = function(x, y) {
