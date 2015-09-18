@@ -15,20 +15,21 @@ test('Functions are restored', function() {
       'TOUCH_ENABLED',
       'BACKGROUND_SIZE_SUPPORTED'
     ],
-    i = 0;
+    i, constant;
 
   for (i = 0; i < constants.length; i++) {
-    ok(videojs.hasOwnProperty(constants[i]));
+    constant = constants[i];
+    ok(videojs.hasOwnProperty(constants[i]), 'videojs.' + constant + ' exists');
   }
 
-  ok(vjs);
-  ok(videojs.util.mergeOptions);
-  ok(videojs.JSON);
-  ok(videojs.USER_AGENT);
-  ok(videojs.EventEmitter);
+  ok(vjs, 'vjs exists');
+  ok(videojs.util.mergeOptions, 'videojs.util.mergeOptions exists');
+  ok(videojs.JSON, 'videojs.JSON exists');
+  ok(videojs.USER_AGENT, 'videojs.USER_AGENT exists');
+  ok(videojs.EventEmitter, 'videojs.EventEmitter exists');
 
-  ok(videojs.Button.extend);
+  ok(videojs.Button.extend, 'videojs.Button.extend exists');
 
-  ok(videojs.round);
-  ok(videojs.trim);
+  ok(videojs.round, 'videojs.round exists');
+  ok(videojs.trim, 'videojs.trim exists');
 });
