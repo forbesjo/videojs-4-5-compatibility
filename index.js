@@ -35,4 +35,9 @@
     videojs.log.warn('videojs.trim(x) is deprecated. Use x.trim() instead.');
     return x.trim();
   };
+
+  videojs.obj = {
+    isArray: Array.isArray
+  };
+
 })(window, window.videojs);
