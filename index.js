@@ -18,10 +18,19 @@
     });
 
   var Component = videojs.getComponent('Component');
+  Component.oldExtend_ = Component.extend;
+  Component.extend = function(proto) {
+    if (proto.remainingTime && !proto.scrubbing) {
+      proto.scrubbing = function() {};
+    }
+    return this.oldExtend_(proto);
+  };
+
   Object.keys(Component.components_)
     .forEach(function(component) {
       videojs[component] = videojs.getComponent(component);
       if (!videojs[component].extend) {
+        videojs[component].oldExtend_ = Component.oldExtend_;
         videojs[component].extend = Component.extend;
       }
     });
