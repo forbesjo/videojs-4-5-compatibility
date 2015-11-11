@@ -11,7 +11,7 @@
     "karma-firefox-launcher": "^0.1.6",
     "karma-qunit": "^0.1.5",
     "qunitjs": "^1.19.0",
-    "video.js": "^5.0.0-rc.90"
+    "video.js": "^5.2.0"
   },
   "scripts": {
     "test": "jshint index.js && karma start test/karma.config.js"
