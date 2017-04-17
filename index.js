@@ -35,6 +35,19 @@
       }
     });
 
+  var oldOptions = videojs.Player.prototype.options;
+  videojs.Player.prototype.options = function() {
+    var options = oldOptions.call(this);
+    if (Object.prototype.toString.call(options.children) === '[object Array]') {
+      for (var i = 0; i < options.children.length; i++) {
+        var childName = options.children[i];
+        options.children[childName] = this.getChild(childName);
+      }
+    }
+
+    return options;
+  };
+
   videojs.round = function(x, y) {
     videojs.log.warn('videojs.round(x, y) is deprecated. Use Number(x.toFixed(y)) instead.');
     return Number(x.toFixed(y));
